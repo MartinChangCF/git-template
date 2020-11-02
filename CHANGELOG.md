@@ -1,3 +1,10 @@
+## v0.2.1 (2020-11-02)
+
+### Fix
+
+- and env-check on init
+- avoid vscode auto import the content
+
 ## v0.2.0 (2020-10-30)
 
 ### Feat
