@@ -6,7 +6,7 @@ env-check:
 	$(if $(shell which cz),,$(error "Please install Commitizen => https://commitizen-tools.github.io/commitizen/"))
 	@echo "[v] Environment => check if pre-commit & commitizen are installed"
 
-init:
+init: env-check
 	@echo "git config --global init.templateDir ${DIR}"
 	@git config --global init.templateDir `pwd`
 
