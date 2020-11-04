@@ -4,25 +4,29 @@ Syncronize the git-hooks in groups
 
 ## Getting Started
 
-This project will help sync the .git/hooks files when `git clone` or `git init`. ([FYR](https://pre-commit.com/#pre-commit-init-templatedir))
-
-### Prerequisites
-
-Pre-Commit
-
-```shell
-brew install pre-commit
-```
-
-> Using other platform? [FYI](https://pre-commit.com/#installation)
+This project will help set up the `.git/hooks`.
 
 ### Run
 
-Set up `git config --global init.templateDir` to this project directory ([FYI](https://git-scm.com/docs/git-init#_template_directory)).
+Set up global git config so that every future `git clone` and `git init` will automatically set up .git/hooks from this repository ([FYI](https://git-scm.com/docs/git-init#_template_directory)).
 
 ```shell
 make init
 ```
+
+### Updates
+
+Copy `commit-msg` to targeted project path if it has already set up `.git/hooks`.
+
+```shell
+TAR=~/my_other_porject_directory make copy
+```
+
+> `TAR` doesn't need the suffix `.git/hooks`
+
+## Changelog
+[CHANGELOG.md](CHANGELOG.md)
+
 
 ## Versioning
 
