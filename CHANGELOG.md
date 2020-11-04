@@ -1,3 +1,17 @@
+## v1.0.0 (2020-11-04)
+
+### Fix
+
+- add "bump" in types for cz supports
+
+### Feat
+
+- replace 3rd party tools to pure shell script
+
+### BREAKING CHANGE
+
+- No tools but pure script
+
 ## v0.2.1 (2020-11-02)
 
 ### Fix
