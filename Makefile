@@ -1,12 +1,12 @@
 DIR=`pwd`
 
-env-check:
-	@printf "[_] Environment => check if pre-commit & commitizen are installed"\\r
-	$(if $(shell which pre-commit),,$(error "Please install pre-commit => https://pre-commit.com/"))
-	$(if $(shell which cz),,$(error "Please install Commitizen => https://commitizen-tools.github.io/commitizen/"))
-	@echo "[v] Environment => check if pre-commit & commitizen are installed"
+# env-check:
+# 	@printf "[_] Environment => check if pre-commit & commitizen are installed"\\r
+# 	$(if $(shell which pre-commit),,$(error "Please install pre-commit => https://pre-commit.com/"))
+# 	$(if $(shell which cz),,$(error "Please install Commitizen => https://commitizen-tools.github.io/commitizen/"))
+# 	@echo "[v] Environment => check if pre-commit & commitizen are installed"
 
-init: env-check
+init:
 	@echo "git config --global init.templateDir ${DIR}"
 	@git config --global init.templateDir `pwd`
 
@@ -15,3 +15,8 @@ init: env-check
 
 	@echo "git config --global --add commit.cleanup strip"
 	@git config --global --add commit.cleanup strip
+
+copy:
+	$(if ${TAR},,$(error "Please provide TAR as the targetted project path => TAR=... make reset"))
+	@echo "Copy targetted project .git/hooks/* to ${TAR}/.git/hooks/"
+	@cp ${DIR}/hooks/* ${TAR}/.git/hooks/
